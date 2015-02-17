@@ -1,16 +1,17 @@
 # WEEK3 ~ ASSIGNMENT 
-# by John Barker
+# by battez
 # cachematrix.R
 # Pair of functions which cache the inverse of a matrix. 
 # example usage:
 # cacheSolve(makeCacheMatrix(x = someInvertibleMatrix))
 # 
-# The first function, makeCacheMatrix creates a special "matrix" object, makes a function to
+# The first function, makeCacheMatrix creates a special "matrix" object, returning a list with
+#  functions to
 # set - the value of the matrix & reset cache
 # get - the value of the matrix object
 # 
-# set - the value of the matrix that is the inverse of matrix x
-# get - ditto
+# setinverse - sets the value of the matrix that is the inverse of matrix x
+# getinverse - gets the value of the matrix that is the inverse of matrix x
 # 
 makeCacheMatrix <- function(x = matrix()) {
 
@@ -30,8 +31,8 @@ makeCacheMatrix <- function(x = matrix()) {
     # simple getting of x.
     get <- function() x
 
-    # function that sets i (again, looks in another environment) to the "solved" passed
-    setinverse <- function(solved) i <<- solved
+    # function that sets i  to the "solved" passed to it
+    setinverse <- function(solved) i <<- solved 
 
     # returns the inverse
     getinverse <- function() i
